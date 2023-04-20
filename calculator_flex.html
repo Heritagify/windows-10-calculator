@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="calculator_flex.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="nav">
+            <div class="nav_ic">
+                <i class="fa fa-bars"></i>
+                <h2>Standard</h2>
+
+            </div>
+            <span><i class="fa fa-history"></i></span>
+        </div>
+        <input type="text" id="result">
+        <input type="text" id="digit">
+        
+        <div class="binary">
+            <button>MC</button>
+            <button>MR</button>
+            <button>M+</button>
+            <button>M-</button>
+            <button>MS</button>
+            <button>M <i class="fa fa-angle-down"></i></button>
+        </div>
+        <div class="p">
+            <div class="rw1">
+                <button onclick="opt('/100')">&#37</button>
+                <button onclick="digit.value=''">CE</button>
+                <button onclick="result.value=''">c</button>
+                <button onclick="cancel()"><i class="fa fa-backspace"></i></button>
+            </div>
+            <div class="rw2">
+                <button>1/x</button>
+                <button>x<sup>2</sup></button>
+                <button onclick="opt('&#8730')">&#8730</button>
+                <button id="operator" onclick="optt('/')" value="/">&#247</button>
+            </div>
+            <div class="rw3">
+                <button id="firstNumber" onclick="opt(7)" value="7">7</button>
+                <button id="firstNumber" onclick="opt(8)" value="8">8</button>
+                <button id="firstNumber" onclick="opt(9)" value="9">9</button>
+                <button id="operator" onclick="optt('*')" value="*">*</button>
+            </div>
+            <div class="rw4">
+                <button id="firstNumber" onclick="opt(4)" value="4">4</button>
+                <button id="firstNumber" onclick="opt(5)" value="5">5</button>
+                <button id="firstNumber" onclick="opt(6)" value="6">6</button>
+                <button id="operator" onclick="optt('-')" value="-">&#8722</button>
+            </div>
+            <div class="rw5">
+                <button id="firstNumber" onclick="opt(1)" value="1">1</button>
+                <button id="firstNumber" onclick="opt(2)" value="2">2</button>
+                <button id="firstNumber" onclick="opt(3)" value="3">3</button>
+                <button id="operator" onclick="optt('+')" value>+</button>
+            </div>
+            <div class="rw6">
+                <button>+/-</button>
+                <button id="firstNumber" onclick="opt(0)" value="">0</button>
+                <button id="operator" onclick="opt('.')" value=".">.</button>
+                <button style="color:black; font-size: 25px; background: burlywood;" onclick="digit.value=eval(result.value)">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+ </html>
+<script>
+    let digit = document.getElementById("digit");
+    let operator =document.getElementById("operator")
+    var firstNumber = document.getElementById("firstNumber")
+    let result = document.getElementById("result")
+
+    function opt(display){
+        result.value += display;
+    } 
+
+    function optt(large){
+        document.getElementById("result").value +=large;
+        // result.value += display;
+    }
+   
+
+    function calculate(){
+        if(operator ==='+'){
+            display.value= (firstNumber.value) + (firstNumber.value)
+        }
+        else if(operator === '-'){
+            display.value = (firstNumber.value) - (firstNumber.value)
+        }
+        else if(operator === '*'){
+            display.value =(firstNumber.value) * (firstNumber.value)
+        }
+        else if(operator ==='/'){
+            display.value = (firstNumber.value) / (firstNumber.value)
+        }
+    }
+   
+    
+</script>
